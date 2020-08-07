@@ -1,10 +1,7 @@
-
-setwd("C:/Users/mamid/Downloads/Shiny/CrossFilter")
-library(shiny)
-library(magrittr)
-library(leaflet)
-ships <- read.csv("ships.csv")
-head(ships)
+if(!require(shiny)){install.packages("shiny", repos='http://cran.rstudio.com/')};library(shiny)
+if(!require(magrittr)){install.packages("magrittr", repos='http://cran.rstudio.com/')};library(magrittr)
+if(!require(leaflet)){install.packages("leaflet", repos='http://cran.rstudio.com/')};library(leaflet)
+ships <- read.csv("data/ships.csv")
 
 ui <- fixedPage(style = "padding: 100px",
                 tags$div(style = "width: 50%; float: left", leaflet::leafletOutput("map")),
